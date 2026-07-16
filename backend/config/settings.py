@@ -16,11 +16,10 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "insecure-dev-key-change-in-producti
 DEBUG = os.getenv("DJANGO_DEBUG", "True").lower() == "true"
 
 ALLOWED_HOSTS = [
-    "https://jobberdotai.vercel.app/",
-    "https://jobber-ai-1v8n.onrender.com",
-    "localhost",
+    "jobberdotai.vercel.app",
     "jobber-ai-1v8n.onrender.com",
-    "127.0.0.1"
+    "localhost",
+    "127.0.0.1",
 ]
 
 # --- Installed Apps ---
@@ -117,7 +116,7 @@ CORS_ALLOW_ALL_ORIGINS = DEBUG
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite dev server
     "http://127.0.0.1:5173",
-    "https://jobberdotai.vercel.app/",
+    "https://jobberdotai.vercel.app",
 ]
 
 # --- Static & Media ---
