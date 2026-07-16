@@ -19,6 +19,7 @@ ALLOWED_HOSTS = [
     "https://jobberdotai.vercel.app/",
     "https://jobber-ai-1v8n.onrender.com",
     "localhost",
+    "https://jobber-ai-1v8n.onrender.com",
     "127.0.0.1"
 ]
 
