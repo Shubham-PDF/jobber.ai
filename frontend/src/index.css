@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #09090b;
+    --card-dark: #121214;
+    --border-dark: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #52525b;
+    --accent: #ffffff;
+    --accent-dim: #e4e4e7;
+    
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+    background-color: var(--bg-dark);
+    color: var(--text-secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    overflow-x: hidden;
+  }
+
+  /* Custom minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Apple/Tesla minimal custom components */
+@layer utilities {
+  .tesla-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+  }
+  
+  .glass-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(9, 9, 11, 0.65);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-card {
+    background: rgba(18, 18, 20, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    background: rgba(24, 24, 27, 0.6);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .minimal-btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 550;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .minimal-btn-primary:hover {
+    background-color: #e4e4e7;
+    transform: scale(1.02);
+  }
+
+  .minimal-btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .minimal-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .input-tesla {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .input-tesla:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+  }
+
+  .shimmer-anim {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.03) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
